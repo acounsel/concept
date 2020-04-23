@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Concept, Phrase, Token
+from .models import Concept, Phrase, Token, Game, Player, Round
 
 # Home page, shows concepts and phrases
 def home(request):
@@ -23,9 +23,19 @@ class TokenDetail(DetailView):
 class CreateToken(CreateView):
     model = Token
     fields = ('color', 'is_primary')
-    success_url = ('/tokens/')
+    success_url = '/tokens/'
 
 class UpdateToken(UpdateView):
     model = Token
     fields = ('concept',)
-    success_url = ('/tokens/')
+    success_url = '/tokens/'
+
+class PhraseList(ListView):
+    model = Phrase
+
+class GameCreate(CreateView):
+    model = Game
+    fields = ('name',)
+
+class GameDetail(DetailView):
+    model = Game

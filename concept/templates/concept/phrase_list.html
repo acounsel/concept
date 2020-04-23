@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div>
+        <p>Choose a phrase below</p>
+        {% for phrase in phrase_list %}
+            <p>{{ phrase.name }}</p>
+        {% endfor %}
+    </div>
+{% endblock %}

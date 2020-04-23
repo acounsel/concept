@@ -1,18 +1,15 @@
-<html>
-    <head>
-        <title>Concept: The Game</title>
-    </head>
-    <body>
-        <h1>Concept: The Game</h1>
-        <p>Welcome to Concept,  
-        {{ first_name }}</p>
-        <h2>Concepts</h2>
-        {% for concept in concepts %}
-        <p>{{ concept }}</p>
-        {% endfor %}
-        <h2>Phrases</h2>
-        {% for phrase in phrase_list %}
-        <p>{{ phrase }}</p>
-        {% endfor %}
-    </body>
-</html>
+{% extends 'base.html' %}
+
+{% block body %}
+    <p>Welcome to Concept,  
+    {{ first_name }}</p>
+    <p>Create a new game</p>
+    <form method="POST" action="{% url 'game-create' %}">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="What's the name of the game?" class=" w-50 form-control">
+        <button class="btn btn-primary">
+            Start Playing
+        </button>
+    </form>
+
+{% endblock %}

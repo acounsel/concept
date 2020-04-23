@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <h2>{{ game.name }}</h2>
+    <a href="{% url 'phrase-list' %}">
+        <button class="btn btn-primary">
+            Start Round 1
+        </button>
+    </a>
+{% endblock %}
