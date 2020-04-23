@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Concept: The Game</title>
+    </head>
+    <body>
+        <h1>Concept: The Game</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>Submit</button>
+        </form>
+    </body>
+</html>

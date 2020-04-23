@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Concept: The Game</title>
+    </head>
+    <body>
+        <h1>Concept: The Game</h1>
+        <p>Welcome to Concept,  
+        {{ first_name }}</p>
+        <h2>Concepts</h2>
+        {% for concept in concepts %}
+        <p>{{ concept }}</p>
+        {% endfor %}
+        <h2>Phrases</h2>
+        {% for phrase in phrase_list %}
+        <p>{{ phrase }}</p>
+        {% endfor %}
+    </body>
+</html>
