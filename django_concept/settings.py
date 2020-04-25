@@ -1,8 +1,6 @@
 import django_heroku
 import os
 
-from .local_settings import SECRET_KEY
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
