@@ -4,11 +4,11 @@
     </head>
     <body>
         <h1>Concept: The Game</h1>
-        <h2>Tokens</h2>
+        <h2>Round {{ round.number }}: {{ phrase }}</h2>
         <a href="{% url 'create-token' %}">Add Token</a>
         {% for token in token_list %}
         <p>
-            <a href="{% url 'update-token' pk=token.id %}">
+            <a href="{% url 'update-token' game_id=game.id round_id=round.id phrase_id=phrase.id pk=token.id %}">
             {{ token.color }} 
             {% if token.is_primary %}
              (Primary)

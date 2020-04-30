@@ -52,6 +52,10 @@ class Game(models.Model):
         return reverse('game-detail', 
             kwargs={'pk':self.id})
 
+    def get_next_round_number(self):
+        num_rounds = Round.objects.filter(game=self).count()
+        return num_rounds + 1
+
 class Player(models.Model):
 
     user = models.OneToOneField(User, 

@@ -1,10 +1,25 @@
 {% extends 'base.html' %}
 
 {% block body %}
-    <div>
-        <p>Choose a phrase below</p>
-        {% for phrase in phrase_list %}
-            <p>{{ phrase.name }}</p>
-        {% endfor %}
-    </div>
+  <div>
+    <p>Choose a phrase below for <strong>{{ game.name }}</strong> Round {{ round.number }}</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Phrase</th>
+          <th>Difficulty</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for phrase in phrase_list %}
+        <tr>
+          <td><a href="{% url 'token-list' game_id=game.id round_id=round.id phrase_id=phrase.id %}">{{ phrase.name }}</a></td>
+          <td>{{ phrase.difficulty_level }}</td>
+          <td>{{ phrase.category }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
 {% endblock %}

@@ -2,7 +2,7 @@
 
 {% block body %}
     <h2>{{ game.name }}</h2>
-    <a href="{% url 'phrase-list' %}">
+    <a href="{% url 'phrase-list' game_id=game.id %}">
         <button class="btn btn-primary">
             Start Round 1
         </button>

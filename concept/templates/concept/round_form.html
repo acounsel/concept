@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <h2>{{ game.name }}</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="game" value="{{ game.id }}">
+    <input type="hidden" name="number" value="{{ game.get_next_round_number }}">
+    <input type="hidden" name="active_player" value="{{ request.user.player.id }}">
+    <button class="btn btn-primary">
+      Start Round {{ game.get_next_round_number }}
+    </button>
+  </form>
+{% endblock %}
